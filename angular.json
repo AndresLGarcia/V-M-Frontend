@@ -64,7 +64,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "vision:build:production"
+              "browserTarget": "vision:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
               "browserTarget": "vision:build:development"
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8562c569-0218-4e4d-9bce-662e1519757d"
   }
 }

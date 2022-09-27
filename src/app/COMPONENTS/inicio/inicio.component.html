@@ -1,0 +1,53 @@
+<div class="container my-5 p-2">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card text">
+        <div class="card-body">
+          <h2><i>find your acronym</i></h2>
+          <form id="form">
+            <div class="form-group my-2"></div>
+            <div class="form-group my-3 controll">
+              <input
+                type="text"
+                placeholder="acronym"
+                name="value"
+                [(ngModel)]="value"
+                class="form-control"
+              />
+              <button
+                class="btn btn-primary my-2"
+                id="register"
+                (click)="addAcronym()"
+              >
+                Search
+              </button>
+            </div>
+            <div class="form-group" >
+              <ul *ngFor="let data of lista">
+                <li>{{ data }}</li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr>
+            <td>Acronym</td>
+            <td>Description</td>
+            <td>Date add</td>
+          </tr>
+        </thead>
+        <tbody id="">
+          <tr *ngFor="let valor of result">
+            <td>{{ valor.name }}</td>
+            <td>{{ valor.description }}</td>
+            <td>{{ valor.created_at | date: "medium" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
